@@ -1,0 +1,349 @@
+/*
+Author: Joshua Abreu
+Date: 3/7/21
+File Name: styles.css
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, img, h1, ul {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+/* Style rule for images */
+img {
+  border: 5px solid white; /* White border */
+   border-radius: 35px;
+}
+
+p{
+  color:#555;
+}
+
+/* Style rules for mobile viewport*/
+
+/*Hide tab-desk class*/
+
+.tab-desk {
+ display: none;
+ }
+
+
+
+ .btn{
+  display: inline-block;
+  background: red;
+  color:#fff;
+  padding: 8px 40px;
+  margin: 10px;
+  border-radius:30px;
+  transition: 0.5s;
+
+}
+.btn:hover{
+  background: #563434
+}
+
+  a{
+   text-decoration: none;
+ }
+
+.row{
+  display: block;
+  margin-left: auto;
+
+}
+.column {
+  float: left;
+  width: auto;
+  padding: 7%;
+  margin: auto;
+}
+
+
+
+.column h1 {
+  font-size: 50px;
+}
+.column p{
+  font-size: 20px;
+}
+
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.pm {
+  padding: 7%;
+  padding-top: 10%;
+  overflow: auto;
+}
+
+.pm h1 {
+  font-size: 67px;
+  line-height: 70px;
+  margin:30px 0;
+}
+.pm p{
+  font-size: 1.5625em;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style rules for header content */
+header {
+  display: block;
+overflow: auto;
+text-align: center;
+font-size: 1.5em;
+background-color: #cfcfcf;
+
+
+}
+
+
+/* Style rules for navigation area */
+nav {
+background-color: #990000;
+}
+
+
+
+nav ul {
+list-style-type: none;
+text-align: center;
+}
+nav li {
+display: block;
+font-size: 2em;
+border-top: 1px solid #e5e9fc;
+}
+nav li a {
+display: block;
+color: #fff;
+text-align: center;
+padding: 0.5em 1em;
+text-decoration: none;
+}
+
+
+/* Style rules for table */
+table {
+ border: 1px solid #373684;
+ border-collapse: collapse;
+ margin: 0 auto;
+ width: 100%;
+ }
+ caption {
+ font-size: 1.5em;
+ font-weight: bold;
+ padding: 1%;
+ }
+ th, td {
+ border: 1px solid black;
+ padding: 2%;
+ }
+ th {
+ background-color: #990000;
+ color: #fff;
+ font-size: 1.15em;
+}
+tr:nth-child(odd) {
+ background-color: #b35f5f;
+
+ }
+
+/* Style rules for main content */
+main {
+
+padding: auto;
+  background: radial-gradient(#fff,grey );
+overflow: auto;
+}
+
+
+main p {
+font-size: 1.25em;
+}
+
+body{
+position: relative;
+overflow: auto;
+}
+
+
+body::after {
+  content: '';
+  display: block;
+  height: 100px; /* Set same as footer's height */
+}
+
+.action {
+font-size: 1.25em;
+color: #373684;
+font-weight: bold;
+}
+
+/* ------form------ */
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+}
+
+input[type=submit]:hover {
+  background-color: grey;
+}
+
+.formcontainer {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  padding-top: 10px;
+}
+
+.col-75 {
+  float: left;
+  width: 50%;
+  padding-top: 10px;
+}
+
+/* Style rules for footer content */
+footer {
+text-align: center;
+
+background-color: black;
+width: 100%;
+
+position: absolute;
+
+   bottom: 0;
+   width: 100%;
+
+   color: white;
+   text-align: center;
+   height: 100px;
+}
+footer a {
+color: #555;;
+text-decoration: none;
+}
+
+
+/* Media Query for Tablet Viewport */
+ @media screen and (min-width: 550px), print {
+
+
+ /* Tablet Viewport: Show tab-desk class, hide mobile class */
+ .tab-desk {
+ display: block;
+ }
+ .mobile {
+ display: none;
+ }
+ .column {
+
+   width: auto;
+
+ }
+ /* Tablet Viewport: Style rule for header content */
+ span.tab-desk {
+ display: inline;
+ }
+
+ /* Tablet Viewport: Style rules for nav area */
+
+nav li {
+  border-top: none;
+  display: inline-block;
+  font-size: 1.5em;
+  border-right: 1px solid #e5e9fc;
+
+}
+
+nav li:last-child{
+  border-right: none;
+}
+
+nav li a{
+  padding-top: .25em;
+  padding-bottom: .25em;
+  padding-right: .5em;
+  padding-left: .5em;
+  height: 50px;
+}
+
+
+
+}
+
+/* Media Query for Desktop Viewport. */
+
+@media screen and (min-width: 769px), print {
+
+
+  .column {
+
+    width: 33.33%;
+  }
+
+/* Desktop Viewport: Style rule for header. */
+
+
+
+/* Desktop Viewport: Style rules for nav area.  */
+
+nav li a {
+  padding-top: 1.5em;
+  padding-bottom: .5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  height: 50px;
+}
+
+nav li a:hover {
+
+  background-color: #999999;
+}
+
+
+
+}
+
+@media print {
+}
+
+.body{
+  color: #000;
+}

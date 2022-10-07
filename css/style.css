@@ -41,6 +41,9 @@ p{
   transition: 0.5s;
 
 }
+
+
+
 .btn:hover{
   background: #563434
 }
@@ -166,7 +169,7 @@ tr:nth-child(odd) {
 main {
 
 padding: auto;
-  background: radial-gradient(#fff,grey );
+  background: radial-gradient(#fff,grey);
 overflow: auto;
 }
 
@@ -225,6 +228,7 @@ input[type=submit]:hover {
 .formcontainer {
   border-radius: 5px;
   padding: 10px;
+  padding-left: 0;
 }
 
 .col-25 {
@@ -235,8 +239,14 @@ input[type=submit]:hover {
 
 .col-75 {
   float: left;
-  width: 50%;
+  width: 75%;
   padding-top: 10px;
+}
+
+.formrow:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Style rules for footer content */
@@ -277,6 +287,7 @@ text-decoration: none;
    width: auto;
 
  }
+
  /* Tablet Viewport: Style rule for header content */
  span.tab-desk {
  display: inline;
@@ -317,6 +328,22 @@ nav li a{
 
     width: 33.33%;
   }
+
+  .row{
+    padding-left: 12%;
+  }
+
+  .pm{
+    padding-left: 19%;
+  }
+
+  .col-75 {
+    float: left;
+    width: 50%;
+    padding-top: 10px;
+  }
+
+
 
 /* Desktop Viewport: Style rule for header. */
 

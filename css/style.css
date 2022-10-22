@@ -15,6 +15,13 @@ border: 0;
 img {
   border: 5px solid white; /* White border */
    border-radius: 35px;
+   width: 225px;
+   transition: 1s;
+}
+
+img:hover {
+ width: 500px;
+ transform: scale(1.1);
 }
 
 p{

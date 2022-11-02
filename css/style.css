@@ -9,6 +9,7 @@ body, header, nav, main, footer, img, h1, ul {
 margin: 0;
 padding: 0;
 border: 0;
+Scroll-behavior:smooth;
 }
 
 /* Style rule for images */
@@ -122,30 +123,92 @@ background-color: #cfcfcf;
 
 
 /* Style rules for navigation area */
-nav {
-background-color: #990000;
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
 }
 
-
-
-nav ul {
-list-style-type: none;
-text-align: center;
-}
-nav li {
-display: block;
-font-size: 2em;
-border-top: 1px solid #e5e9fc;
-}
-nav li a {
-display: block;
-color: #fff;
-text-align: center;
-padding: 0.5em 1em;
-text-decoration: none;
+.brand-title{
+  font-size: 1.5rem;
+  margin: .5rem;
 }
 
+.navbar-links ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
 
+.navbar-links li{
+  list-style: none;
+}
+
+.navbar-links li a{
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links li:hover {
+  background-color: #555;
+}
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  display:none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+
+
+}
+
+/* Hamburger Menu */
+
+@media(max-width: 450px){
+  .toggle-button{
+    display: flex;
+  }
+  .navbar-links{
+    display: none;
+    width: 100%;
+  }
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links ul{
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links li{
+    text-align: center;
+  }
+
+  .navbar-links li a{
+    padding: .5rem 1rem;
+  }
+
+  .navbar-links.active{
+    display: flex;
+  }
+}
 /* Style rules for table */
 table {
  border: 1px solid #373684;
@@ -176,7 +239,7 @@ tr:nth-child(odd) {
 main {
 
 padding: auto;
-  background: radial-gradient(#fff,grey);
+background: radial-gradient(#fff,grey);
 overflow: auto;
 }
 
@@ -299,32 +362,14 @@ text-decoration: none;
  span.tab-desk {
  display: inline;
  }
-
+}
  /* Tablet Viewport: Style rules for nav area */
 
-nav li {
-  border-top: none;
-  display: inline-block;
-  font-size: 1.5em;
-  border-right: 1px solid #e5e9fc;
-
-}
-
-nav li:last-child{
-  border-right: none;
-}
-
-nav li a{
-  padding-top: .25em;
-  padding-bottom: .25em;
-  padding-right: .5em;
-  padding-left: .5em;
-  height: 50px;
-}
 
 
 
-}
+
+
 
 /* Media Query for Desktop Viewport. */
 
@@ -349,28 +394,6 @@ nav li a{
     width: 50%;
     padding-top: 10px;
   }
-
-
-
-/* Desktop Viewport: Style rule for header. */
-
-
-
-/* Desktop Viewport: Style rules for nav area.  */
-
-nav li a {
-  padding-top: 1.5em;
-  padding-bottom: .5em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  height: 50px;
-}
-
-nav li a:hover {
-
-  background-color: #999999;
-}
-
 
 
 }

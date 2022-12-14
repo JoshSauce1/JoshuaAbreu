@@ -1,22 +1,32 @@
 <?php
 
-    $firstname = $_POST['firstname']
-    $lastname = $_POST['lastname']
-    $email = $_POST['email']
-    $subject = $_POST['subject']
+
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
 
     //Database fann_get_total_connection
-    $conn = new mysqli('localhost','root','test');
-    if($conn->connect_error){
-      die('Connection Failes  :  '.conn->connect_error);
-    }else{
-      $stmt = $conn->prepare("insert into tes2(firstname, lastname, email, subject)
-      values(?, ?, ?, ?)");
-      $stmt->bind_param("ssss", $firstname, $lastname )
-      echo "registration Succesfully...";
-      $stmt->close();
-      $conn->close();
 
+    $host = "localhost";
+    $dbname = "message_db";
+    $username = "root";
+    $password = "";
+
+    $conn = mysqli_connect($host, $username, $password, $dbname);
+
+    $sql = "INSERT INTO message (firstname, lastname, email, subject)
+            VALUES ('$firstname', '$lastname', '$email', '$subject')";
+
+    $stmt = mysqli_stmt_init($conn);
+
+    if ( ! mysqli_stmt_prepare($stmt, $sql)) {
+      die(mysqli_error($conn));
     }
-    }
- ?>
+
+    mysqli_stmt_bind_param($stmt, "ssss",
+    $firstname, $lastname, $email, $subject);
+
+    mysqli_stmt_execute($stmt);
+
+    echo "Record Saved";
